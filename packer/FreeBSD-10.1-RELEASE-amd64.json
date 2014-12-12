@@ -2,13 +2,13 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/i386/i386/ISO-IMAGES/10.0/FreeBSD-10.0-RELEASE-i386-disc1.iso",
-      "iso_checksum": "9d12797f008f6c180a2a514476c2dede",
+      "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/10.1/FreeBSD-10.1-RELEASE-amd64-disc1.iso",
+      "iso_checksum": "d0d4553080b88653569e1871d57fc819",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "1000s",
-      "guest_os_type": "FreeBSD",
+      "guest_os_type": "FreeBSD_64",
       "headless": "true",
       "shutdown_command": "echo 'shutdown -p now' | sudo su -",
       "boot_wait": "10s",
@@ -38,14 +38,14 @@
         "mdmfs -s 100m md1 /tmp<enter>",
         "mdmfs -s 100m md2 /mnt<enter>",
         "dhclient -l /tmp/dhclient.lease.em0 em0<enter><wait5>",
-        "fetch -o /tmp/setup http://{{ .HTTPIP }}:{{ .HTTPPort }}/install_i386.sh<enter><wait><wait>",
+        "fetch -o /tmp/setup http://{{ .HTTPIP }}:{{ .HTTPPort }}/install.sh<enter><wait><wait>",
         "bsdinstall script /tmp/setup<enter>"
       ]
     }
   ],
   "post-processors": [
     {
-      "output": "./builds/freebsd-10.0-i386.box",
+      "output": "./builds/freebsd-10.1-amd64.box",
       "type": "vagrant"
     }
   ],

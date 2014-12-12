@@ -2,14 +2,14 @@
   "builders": [
     {
       "type": "virtualbox-iso",
-      "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/10.1/FreeBSD-10.1-RELEASE-amd64-disc1.iso",
-      "iso_checksum": "d0d4553080b88653569e1871d57fc819",
+      "iso_url": "http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/9.3/FreeBSD-9.3-RELEASE-amd64-disc1.iso",
+      "iso_checksum": "1fc7f8bace8dc861258af9042c9918d6",
       "iso_checksum_type": "md5",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "1000s",
       "guest_os_type": "FreeBSD_64",
-      "headless": "true",
+      "headless": "false",
       "shutdown_command": "echo 'shutdown -p now' | sudo su -",
       "boot_wait": "10s",
       "http_directory": "http",

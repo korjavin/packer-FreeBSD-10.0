@@ -9,7 +9,7 @@
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "1000s",
       "guest_os_type": "FreeBSD_64",
-      "headless": "false",
+      "headless": "true",
       "shutdown_command": "echo 'shutdown -p now' | sudo su -",
       "boot_wait": "10s",
       "http_directory": "http",
@@ -45,7 +45,7 @@
   ],
   "post-processors": [
     {
-      "output": "./builds/freebsd-10.1-amd64.box",
+      "output": "./builds/freebsd-9.3-amd64.box",
       "type": "vagrant"
     }
   ],
